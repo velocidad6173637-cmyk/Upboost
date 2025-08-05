@@ -1,0 +1,152 @@
+
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel Free Fire</title>
+  <style>
+    body {
+      background: url('fondo.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .panel {
+      border: 4px solid red;
+      border-radius: 10px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.85);
+      width: 300px;
+      animation: borderColor 2s infinite alternate;
+    }
+
+    @keyframes borderColor {
+      0% { border-color: red; }
+      25% { border-color: orange; }
+      50% { border-color: yellow; }
+      75% { border-color: lime; }
+      100% { border-color: cyan; }
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 10px 0;
+      font-weight: bold;
+      border-bottom: 1px solid white;
+    }
+
+    .option {
+      margin: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .option label {
+      color: lime;
+    }
+
+    .switch {
+      width: 40px;
+      height: 20px;
+      background: gray;
+      border-radius: 10px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .switch::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 16px;
+      height: 16px;
+      background: white;
+      border-radius: 50%;
+      transition: .3s;
+    }
+
+    .switch.active {
+      background: green;
+    }
+
+    .switch.active::before {
+      transform: translateX(20px);
+    }
+
+    .fps-option {
+      margin-left: 20px;
+      display: block;
+      color: white;
+      cursor: pointer;
+    }
+
+    .fps-option input {
+      margin-right: 5px;
+    }
+
+    .bottom-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .bottom-buttons button {
+      padding: 10px;
+      width: 45%;
+      border: none;
+      background: black;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <img src="logo.png" alt="Logo" style="width: 100%; border-radius: 5px; margin-bottom: 10px;">
+    <div class="section-title">OTIMIZAÇÕES ✔</div>
+    <div class="option">
+      <label>ATIVAR OTIMIZAÇÃO</label>
+      <div class="switch" onclick="toggleSwitch(this)"></div>
+    </div>
+    <div class="option">
+      <label>ATIVAR LIMPEZA PROFUNDA</label>
+      <div class="switch" onclick="toggleSwitch(this)"></div>
+    </div>
+
+    <div class="section-title">0 DELAY</div>
+    <div class="option">
+      <label>ATIVAR TELA 0 DELAY </label>
+      <div class="switch" onclick="toggleSwitch(this)"></div>
+    </div>
+    <div class="option">
+      <label>ATIVAR PING 0 DELAY 💣</label>
+      <div class="switch" onclick="toggleSwitch(this)"></div>
+    </div>
+
+    <div class="section-title">FPS BOOSTER 🟩</div>
+    <label class="fps-option"><input type="radio" name="fps" /> 90 FPS</label>
+    <label class="fps-option"><input type="radio" name="fps" /> 120 FPS</label>
+    <label class="fps-option"><input type="radio" name="fps" /> 240 FPS</label>
+
+    <div class="bottom-buttons">
+      <button>FF NORMAL</button>
+      <button>FF MAX</button>
+    </div>
+  </div>
+  <script>
+    function toggleSwitch(element) {
+      element.classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
